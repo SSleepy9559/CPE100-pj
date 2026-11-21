@@ -1,0 +1,25 @@
+# requirements.txt - CPE 100 Rankine Cycle with Open Feedwater Heater
+# Owner: Person C. Python 3.12 or newer (all four members use the same minor version).
+#
+# Install from the project root:
+#     pip install -r requirements.txt
+#
+# IMPORTANT: "same versions" rule (section 16.2).
+# The lines below are minimum versions only. After everyone has installed,
+# ONE person runs the command below and replaces this file with the exact
+# pinned versions (==), so all four members install identical versions:
+#     pip freeze | findstr /i "numpy pandas scipy matplotlib pytest coolprop"    (Windows)
+#     pip freeze | grep -i -E "numpy|pandas|scipy|matplotlib|pytest|coolprop"    (Mac/Linux)
+
+# --- used by src/ and main.py ---
+numpy>=2.0
+pandas>=2.2
+scipy>=1.13
+matplotlib>=3.9
+
+# --- testing ---
+pytest>=8.0
+
+# --- ONLY for scripts/make_steam_table.py and scripts/validate_vs_coolprop.py ---
+# Do not import CoolProp anywhere inside src/ (the CSV tables are committed to Git).
+CoolProp>=6.6
